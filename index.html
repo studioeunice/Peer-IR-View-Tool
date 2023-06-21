@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peer-IR-View-Tool</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+
+  <!-- The Modal for  -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>-Adding people and moveing them around by dragging and dropping.</p>
+      <p>-Individual card can be edited and removed.</p>
+      <p>-Adding empty cards, for spacing</p>
+    </div>
+
+  </div>
+
+  <header>
+    <div class="info-container">
+      <input type="text" id="university-name" autocomplete="off" placeholder="Name of the organization..." required
+        pattern="^[A-Za-z]+$">
+      <h2 id="university-name-heading"></h2>
+      <button class="no-print" id="university-name-button" onclick="toggleEdit()">Save</button>
+    </div>
+
+    <form class=" input-container no-print" onsubmit="addNewPerson(event)" id="input-form">
+      <div class="fields">
+        <input type="text" id="name" autocomplete="off" placeholder="name..." required pattern="^[A-Za-z]+$">
+        <input type="text" id="title" autocomplete="on" placeholder="title..." required pattern="^[A-Za-z]+$">
+        <input type="text" id="department" autocomplete="on" placeholder="department...">
+        <input type="text" id="responsibilities" autocomplete="off" placeholder="responsibilities...">
+        <input type="submit" id="submit-button" value="Add Person">
+      </div>
+    </form>
+  </header>
+
+  <section id="levels-container" class="levels-container">
+
+    <div class="levels" id="level-1">
+      <div class="level-container" id="level-container-1" ondragover="dragOver(event)" ondrop="dragDrop(event)"></div>
+      <div class="level-tag">
+        <h5 id="level-1-name-title">Management level 1</h5>
+        <input type="text" id="level-1-name-input" class="edit-level-name-input no-print hidden">
+        <button type="button" id="level-1-edit-button" class="edit-level-name-button no-print"
+          onclick="editLevelName(1)">edit</button>
+        <button type="button" id="level-1-save-button" class="edit-level-name-button no-print hidden"
+          onclick="saveLevelName(1)">save</button>
+        <button type="button" id="ghost-button-1" class="ghost-button no-print" onclick="createGhost()">add empty
+          card</button>
+      </div>
+    </div>
+    </div>
+
+    <div class="levels" id="level-2">
+      <div class="level-container" id="level-container-2" ondragover="dragOver(event)" ondrop="dragDrop(event)"></div>
+      <div class="level-tag">
+        <h5 id="level-2-name-title">Management level 2</h5>
+        <input type="text" id="level-2-name-input" class="edit-level-name-input no-print hidden">
+        <button type="button" id="level-2-edit-button" class="edit-level-name-button no-print"
+          onclick="editLevelName(2)">edit</button>
+        <button type="button" id="level-2-save-button" class="edit-level-name-button no-print hidden"
+          onclick="saveLevelName(2)">save</button>
+        <button type="button" id="ghost-button-2" class="ghost-button no-print" onclick="createGhost()">add empty
+          card</button>
+      </div>
+    </div>
+
+    <div class="levels" id="level-3">
+      <div class="level-container" id="level-container-3" ondragover="dragOver(event)" ondrop="dragDrop(event)"></div>
+      <div class="level-tag">
+        <h5 id="level-3-name-title">Management level 3</h5>
+        <input type="text" id="level-3-name-input" class="edit-level-name-input no-print hidden">
+        <button type="button" id="level-3-edit-button" class="edit-level-name-button no-print"
+          onclick="editLevelName(3)">edit</button>
+        <button type="button" id="level-3-save-button" class="edit-level-name-button no-print hidden"
+          onclick="saveLevelName(3)">save</button>
+        <button type="button" id="ghost-button-3" class="ghost-button no-print" onclick="createGhost()">add empty
+          card</button>
+      </div>
+    </div>
+
+    <div class="levels" id="level-4">
+      <div class="level-container" id="level-container-4" ondragover="dragOver(event)" ondrop="dragDrop(event)"></div>
+      <div class="level-tag">
+        <h5 id="level-4-name-title">Management level 4</h5>
+        <input type="text" id="level-4-name-input" class="edit-level-name-input no-print hidden">
+        <button type="button" id="level-4-edit-button" class="edit-level-name-button no-print"
+          onclick="editLevelName(4)">edit</button>
+        <button type="button" id="level-4-save-button" class="edit-level-name-button no-print hidden"
+          onclick="saveLevelName(4)">save</button>
+        <button type="button" id="ghost-button-4" class="ghost-button no-print" onclick="createGhost()">add empty
+          card</button>
+      </div>
+    </div>
+
+  </section>
+
+
+  <footer class="footer-container">
+    <div class="footer-container-logos">
+      <img src="media/pirv-logo.png" alt="PIRV logo" class="logo">
+      <img src="media/erasmus-logo.png" alt="Erasmus logo" class="logo">
+    </div>
+
+    <div class="footer-button-area no-print">
+      <button type="button" id="myBtn" class="help-button no-print" onclick="window.print()">Help</button>
+      <button type="button" id="exportBtn" class="no-print">Save</button>
+      <button type="button" id="importBtn" class="no-print">Load</button>
+      <button type="button" class="print-button no-print" onclick="preparePrint()">Print</button>
+    </div>
+
+  </footer>
+
+  <div class="error-container"></div>
+
+  <script src="app.js"></script>
+  <script src="modal.js"></script>
+</body>
+
+</html>
