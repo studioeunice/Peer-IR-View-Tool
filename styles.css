@@ -27,7 +27,7 @@
     }
 
     .no-print {
-        display: none !important;
+        display: none;
 
         /* Disable headers and footers */
         @page {
@@ -42,7 +42,7 @@
     /* prevent elements from changing position and size */
     .no-print,
     .no-print * {
-        position: fixed !important;
+        position: fixed;
         left: 0;
         top: 0;
         color: #000;
@@ -390,10 +390,6 @@ header .input-container {
 }
 
 
-
-
-
-
 /* The container for each person element */
 .person-container {
     display: flex;
@@ -497,6 +493,7 @@ header .input-container {
     justify-content: space-around;
     align-items: center;
     width: auto;
+    border-top: 0px;
     padding: 7px 7px;
     display: flex;
     flex-direction: row;
