@@ -40,7 +40,7 @@
             <button class="no-print" id="university-name-button" onclick="toggleEdit()">Save</button>
         </div>
 
-        <form class="input-container no-print" onsubmit="addNewPerson(event)" id="input-form">
+        <form class="input-container no-print" onsubmit="addNewPerson(event)" data-print="exclude" id="input-form">
             <div class="fields" no-print>
                 <input type="text" id="name" autocomplete="off" placeholder="name..." required
                     pattern="^[A-Za-z\u00C0-\u017F]+$">
