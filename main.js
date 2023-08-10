@@ -451,13 +451,13 @@ function attachEventListenersToCard(cardElement) {
     const deleteButton = cardElement.querySelector('.delete-button');
 
     // Add event listener to the copy button
-    copyButton.addEventListener('click', handleCopyButtonClick);
+    copyButton?.addEventListener('click', handleCopyButtonClick);
 
     // Add event listener to the edit button
-    editButton.addEventListener('click', handleEditButtonClick);
+    editButton?.addEventListener('click', handleEditButtonClick);
 
     // Add event listener to the delete button
-    deleteButton.addEventListener('click', handleDeleteButtonClick);
+    deleteButton?.addEventListener('click', handleDeleteButtonClick);
 }
 
 
