@@ -17,4 +17,4 @@ The app enables users to visually map organizational structures by capturing key
 
 -you can print your organizational chart from the 'print' button: note that you can set the chart to 'landscape' layout, and
 it’s also possible to modify the scale by going into the 'more settings' option. This will result in a better-proportioned
-printed version of the file. Note that you can also save as a pdf file.]([media/help.png](https://studioeunice.github.io/Peer-IR-View-Tool/media/help.png)https://studioeunice.github.io/Peer-IR-View-Tool/media/help.png)
+printed version of the file. Note that you can also save as a pdf file.](https://studioeunice.github.io/Peer-IR-View-Tool/media/help.png)
