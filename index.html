@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who-is-who</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
@@ -31,20 +31,17 @@
     <!-- Header - Organization name and input field -->
     <header>
         <div class="info-container">
-            <input type="text" id="university-name" autocomplete="off" placeholder="Name of the organization..."
-                required pattern="^[A-Za-z]+$">
-            <h2 id="university-name-heading"></h2>
+            <input type="text" id="university-name" autocomplete="off" placeholder="Name of the organization..." required pattern="^[A-Za-z]+$">
+            <h2 id="university-name-heading" style="display: none;"></h2>
             <button class="no-print" id="university-name-button" onclick="toggleEdit()">Save</button>
         </div>
 
-        <form class="input-container no-print" onsubmit="addNewPerson(event)" id="input-form">
-            <div class="fields no-print">
-                <input type="text" id="name" autocomplete="off" placeholder="name..." required
-                    pattern="^[A-Za-z\u00C0-\u017F]+$">
-                <input type="text" id="title" autocomplete="on" placeholder="title..." required
-                    pattern="^[A-Za-z\u00C0-\u017F]+$">
-                <input type="text" id="department" autocomplete="on" placeholder="department...">
-                <input type="text" id="responsibilities" autocomplete="off" placeholder="responsibilities...">
+        <form class="no-print" onsubmit="addNewPerson(event)" id="input-form">
+            <div class="input-container">
+                <input type="text" id="name" autocomplete="off" placeholder="Name..." required pattern="^[A-Za-z\u00C0-\u017F]+$">
+                <input type="text" id="title" autocomplete="on" placeholder="Title..." required pattern="^[A-Za-z\u00C0-\u017F]+$">
+                <input type="text" id="department" autocomplete="on" placeholder="Department...">
+                <input type="text" id="responsibilities" autocomplete="off" placeholder="Responsibilities...">
                 <input type="submit" id="submit-button" value="Add Person">
             </div>
         </form>
@@ -79,12 +76,9 @@
             <div class="level-tag">
                 <h5 id="level-1-name-title">Management level 1</h5>
                 <input type="text" id="level-1-name-input" class="edit-level-name-input no-print hidden">
-                <button type="button" id="level-1-edit-button" class="edit-level-name-button no-print"
-                    onclick="editLevelName(1)">edit</button>
-                <button type="button" id="level-1-save-button" class="edit-level-name-button no-print hidden"
-                    onclick="saveLevelName(1)">save</button>
-                <button type="button" class="add-empty-card-button no-print" onclick="createGhost(event)">add empty
-                    card</button>
+                <button type="button" id="level-1-edit-button" class="edit-level-name-button no-print" onclick="editLevelName(1)">edit</button>
+                <button type="button" id="level-1-save-button" class="edit-level-name-button no-print hidden" onclick="saveLevelName(1)">save</button>
+                <button type="button" class="add-empty-card-button no-print" onclick="createGhost(event)">add empty card</button>
             </div>
         </div>
 
@@ -115,10 +109,8 @@
             <div class="level-tag">
                 <h5 id="level-2-name-title">Management level 2</h5>
                 <input type="text" id="level-2-name-input" class="edit-level-name-input no-print hidden">
-                <button type="button" id="level-2-edit-button" class="edit-level-name-button no-print"
-                    onclick="editLevelName(2)">edit</button>
-                <button type="button" id="level-2-save-button" class="edit-level-name-button no-print hidden"
-                    onclick="saveLevelName(2)">save</button>
+                <button type="button" id="level-2-edit-button" class="edit-level-name-button no-print" onclick="editLevelName(2)">edit</button>
+                <button type="button" id="level-2-save-button" class="edit-level-name-button no-print hidden" onclick="saveLevelName(2)">save</button>
                 <button type="button" class="add-empty-card-button no-print" onclick="createGhost(event)">add empty
                     card</button>
             </div>
@@ -152,10 +144,8 @@
             <div class="level-tag">
                 <h5 id="level-3-name-title">Management level 3</h5>
                 <input type="text" id="level-3-name-input" class="edit-level-name-input no-print hidden">
-                <button type="button" id="level-3-edit-button" class="edit-level-name-button no-print"
-                    onclick="editLevelName(3)">edit</button>
-                <button type="button" id="level-3-save-button" class="edit-level-name-button no-print hidden"
-                    onclick="saveLevelName(3)">save</button>
+                <button type="button" id="level-3-edit-button" class="edit-level-name-button no-print" onclick="editLevelName(3)">edit</button>
+                <button type="button" id="level-3-save-button" class="edit-level-name-button no-print hidden" onclick="saveLevelName(3)">save</button>
                 <button type="button" class="add-empty-card-button no-print" onclick="createGhost(event)">add empty
                     card</button>
             </div>
@@ -188,10 +178,8 @@
             <div class="level-tag">
                 <h5 id="level-4-name-title">Management level 4</h5>
                 <input type="text" id="level-4-name-input" class="edit-level-name-input no-print hidden">
-                <button type="button" id="level-4-edit-button" class="edit-level-name-button no-print"
-                    onclick="editLevelName(4)">edit</button>
-                <button type="button" id="level-4-save-button" class="edit-level-name-button no-print hidden"
-                    onclick="saveLevelName(4)">save</button>
+                <button type="button" id="level-4-edit-button" class="edit-level-name-button no-print" onclick="editLevelName(4)">edit</button>
+                <button type="button" id="level-4-save-button" class="edit-level-name-button no-print hidden" onclick="saveLevelName(4)">save</button>
                 <button type="button" class="add-empty-card-button no-print" onclick="createGhost(event)">add empty
                     card</button>
             </div>
