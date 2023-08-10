@@ -49,6 +49,10 @@
         background: #fff;
         font-size: 16px;
     }
+
+    .person-footer-container {
+        display: none !important;
+    }
 }
 
 
@@ -117,30 +121,31 @@ header {
     width: auto;
     display: flex;
     justify-content: space-between;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    align-items: baseline;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    margin: 0 20px;
+    gap: 16px;
 }
 
 /* Organization namemig container styling */
 header .info-container {
     display: flex;
     min-width: 280px;
-    margin-left: 20px;
-    align-items: stretch;
+    align-items: center;
+    height: 50px;
+    gap: 10px;
 }
 
 /* Organization name field styling */
 .info-container #university-name {
+    height: 100%;
     font-size: 13px;
     width: 15em;
-    margin-top: 10px;
-    height: 30px;
     border: 2px solid #4B4B4B;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    box-sizing: border-box;
+    flex-grow: 1;
 }
 
 #university-name-heading:first-letter {
@@ -149,9 +154,8 @@ header .info-container {
 
 
 .info-container button {
-    margin-top: 10px;
-    margin-left: 10px;
-    height: 53px;
+    width: 70px;
+    height: 100%;
     font-size: 14px;
     padding-left: 10px;
     padding-right: 10px;
@@ -169,70 +173,29 @@ header .info-container {
 }
 
 header .input-container {
-    margin-right: 20px;
-    margin-left: 10px;
-    width: auto;
-    height: 2em;
+    width: 100%;
     display: flex;
-    align-items: flex-end;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
-    z-index: 3;
+    gap: 10px;
+    justify-content: center;
 }
 
-.fields #name {
+.input-container input {
     font-size: 14px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    /* width: 200px; */
     border: 2px solid #4B4B4B;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 15px;
     padding-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.fields #title {
-    font-size: 14px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    /* width: 200px; */
-    border: 2px solid #4B4B4B;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.fields #department {
-    font-size: 14px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    /* width: 200px; */
-    border: 2px solid #4B4B4B;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.fields #responsibilities {
-    font-size: 14px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    /* width: 250px; */
-    border: 2px solid #4B4B4B;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
 
 /* Styles for a headers data entry "Add Person-button"*/
-.input-container input[type="submit"] {
+.input-container input[type=submit] {
     font-size: 14px;
     height: 2em;
+    max-width: 100px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 15px;
@@ -243,7 +206,7 @@ header .input-container {
 }
 
 /* Styles for a hover effect for headers data entry "Add Person-button" */
-.input-container input[type="submit"]:hover {
+.input-container input[type=submit]:hover {
     background-color: rgb(120, 170, 70);
     border: 2px solid #4B4B4B;
     color: #f7f7f7;
@@ -322,13 +285,15 @@ header .input-container {
 /* "edit name"-buttons hover settings */
 .edit-level-name-button {
     border: none;
-    padding: 4px;
+    padding: 4px 6PX;
     margin-left: 10px;
     background-color: rgb(189, 189, 189);
     transition-duration: 0.4s;
     cursor: pointer;
     color: white;
 }
+
+
 
 /* "edit name"-buttons hover settings */
 .edit-level-name-button:hover {
@@ -355,7 +320,7 @@ header .input-container {
 /* "add empty card" button settings */
 .add-empty-card-button {
     border: none;
-    padding: 4px;
+    padding: 4px 6PX;
     margin-left: 10px;
     background-color: rgb(189, 189, 189);
     transition-duration: 0.4s;
@@ -475,16 +440,13 @@ header .input-container {
 
 /* person cards footer section settings (are for buttons) */
 .person-footer-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: auto;
     border-top: .5px solid #ababab;
     padding: 7px 7px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 /* person cards footer section settings (are for buttons) */
@@ -507,12 +469,13 @@ header .input-container {
 .edit-button,
 .delete-button {
     border: none;
-    /* border: 2px solid #4B4B4B; */
-    padding: 4px, 6px;
+    border: none;
+    padding: 3px 6px;
     background-color: rgb(189, 189, 189);
     transition-duration: 0.4s;
     cursor: pointer;
     color: white;
+    font-size: 12px;
 }
 
 .copy-button:hover {
@@ -621,12 +584,12 @@ header .input-container {
     display: flex;
     width: auto;
     z-index: 2;
+    gap: 10px;
 }
 
 .print-button {
     font-size: 14px;
     height: 2em;
-    margin-left: 10px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
@@ -639,7 +602,6 @@ header .input-container {
 #myBtn {
     font-size: 14px;
     height: 2em;
-    margin-left: 10px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
@@ -653,7 +615,6 @@ header .input-container {
 #importBtn {
     font-size: 14px;
     height: 2em;
-    margin-left: 10px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
@@ -686,4 +647,48 @@ header .input-container {
     background-color: rgb(190, 190, 190);
     border: 2px solid rgb(190, 190, 190);
     color: #f7f7f7;
+}
+
+
+@media screen and (max-width:990px) {
+    .input-container {
+        flex-wrap: wrap;
+    }
+
+    .input-container input {
+        width: calc(50% - 5px);
+    }
+}
+
+@media screen and (max-width:768px) {
+    header {
+        flex-direction: column;
+    }
+
+    header .input-container {
+        justify-content: flex-start;
+    }
+
+    .footer-container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .footer-container-logos {
+        margin: 0;
+        text-align: center;
+    }
+
+    .logo {
+        margin: 0;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .input-container input {
+        width: 100%;
+    }
+
+
 }
