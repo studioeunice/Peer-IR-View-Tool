@@ -194,7 +194,7 @@ header .input-container {
 /* Styles for a headers data entry "Add Person-button"*/
 .input-container input[type=submit] {
     font-size: 14px;
-    height: 2em;
+    height: 50px;
     max-width: 100px;
     padding-left: 10px;
     padding-right: 10px;
@@ -230,24 +230,24 @@ header .input-container {
 }
 
 
-/* Border and background-color settings for a management level contianers */
+/* Border and background-color settings for management level containers */
 #level_1 {
-    background: hsl(51, 93%, 88%, 0.1);
+
     border: 2px solid #4B4B4B;
 }
 
 #level_2 {
-    background: hsl(130, 95%, 90%, 0.1);
+
     border: 2px solid #4B4B4B;
 }
 
 #level_3 {
-    background: hsl(18, 93%, 88%, 0.1);
+
     border: 2px solid #4B4B4B;
 }
 
 #level_4 {
-    background: hsl(168, 93%, 88%, 0.1);
+
     border: 2px solid #4B4B4B;
 }
 
