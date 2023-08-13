@@ -1,5 +1,5 @@
 # Who-is-who-Tool
-The app enables users to visually map organizational structures by capturing key information such as names, titles, departments, and responsibilities. Its primary objective is to enhance effective communication among teams within the organisation by creating printable charts.
+The app enables users to visually map organizational structures by capturing key information such as names, titles, departments, and responsibilities. Its primary objective is to enhance effective communication among teams within the organisation by creating printable charts. The app starts with four cards as examples to work with. Users can start editing, copying or deleting them, and start from scratch.
 
 
 1. Editing the organization's name. Filling and submitting new cards.
