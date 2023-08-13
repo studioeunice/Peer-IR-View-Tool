@@ -170,7 +170,6 @@ function handleEditButtonClick(event) {
     editPerson(cardElement);
 }
 
-
 // Function to handle the delete button click
 function handleDeleteButtonClick(event) {
     const deleteButton = event.target.closest('.delete-button');
@@ -179,9 +178,6 @@ function handleDeleteButtonClick(event) {
         deleteCard(cardElement);
     }
 }
-
-
-
 
 // Function to copy a card
 function copyCard(cardElement) {
@@ -267,9 +263,6 @@ function editPerson(personContainer) {
     // Remove the sortable class to prevent hover effect
     cardElement.classList.remove('sortable-item');
 }
-
-
-
 
 // Function to save the edited person
 function savePerson(personContainer) {
@@ -429,7 +422,6 @@ function load() {
 
     fileInput.click();
 }
-
 
 function attachEventListeners() {
     var parentElement = document.body;
