@@ -341,7 +341,6 @@ function preparePrint() {
     }
 }
 
-// Saving the Title and cards as html file
 function save() {
     // Get the info container element and levels container element
     const infoContainer = document.getElementById('info-container');
@@ -369,7 +368,6 @@ function save() {
     // Save the file
     saveAs(blob, fileName);
 }
-
 
 function attachEventListenersToCards(levelContainer) {
     const cards = levelContainer.querySelectorAll('.person-container');
