@@ -348,18 +348,25 @@ function preparePrint() {
     }
 }
 
+// Saving the Title and cards as html file
 function save() {
-    // Get the levels container element
+    // Get the info container element and levels container element
+    const infoContainer = document.getElementById('info-container');
     const levelsContainer = document.getElementById('levels-container');
 
-    // Create a clone of the levels container to preserve its state
-    const clone = levelsContainer.cloneNode(true);
+    // Clone the info container and levels container to preserve their states
+    const infoClone = infoContainer.cloneNode(true);
+    const levelsClone = levelsContainer.cloneNode(true);
 
-    // Convert the cloned levels container to an HTML string
-    const htmlString = clone.outerHTML;
+    // Convert the cloned containers to HTML strings
+    const infoHtmlString = infoClone.outerHTML;
+    const levelsHtmlString = levelsClone.outerHTML;
+
+    // Combine the info and levels HTML strings into a single document
+    const combinedHtmlString = `<div id="info-container">${infoHtmlString}</div>${levelsHtmlString}`;
 
     // Create a new Blob object
-    const blob = new Blob([htmlString], {
+    const blob = new Blob([combinedHtmlString], {
         type: 'text/html',
     });
 
@@ -370,6 +377,7 @@ function save() {
     saveAs(blob, fileName);
 }
 
+
 function attachEventListenersToCards(levelContainer) {
     const cards = levelContainer.querySelectorAll('.person-container');
     cards.forEach((card) => {
@@ -377,6 +385,7 @@ function attachEventListenersToCards(levelContainer) {
     });
 }
 
+// Loading the Title and cards as html file
 function load() {
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
@@ -391,18 +400,28 @@ function load() {
             const tempContainer = document.createElement('div');
             tempContainer.innerHTML = contents;
 
+            const loadedInfoContainer = tempContainer.querySelector('#info-container');
             const loadedLevelsContainer = tempContainer.querySelector('#levels-container');
-            const existingLevelsContainer = document.querySelector('#levels-container');
+
+            if (!loadedInfoContainer || !loadedLevelsContainer) {
+                console.error("Loaded containers not found or not properly structured.");
+                return;
+            }
+
+            const existingInfoContainer = document.getElementById('info-container');
+            const existingLevelsContainer = document.getElementById('levels-container');
+
+            existingInfoContainer.innerHTML = loadedInfoContainer.innerHTML;
             existingLevelsContainer.innerHTML = loadedLevelsContainer.innerHTML;
 
-            const newLevelContainers = existingLevelsContainer.querySelectorAll('.level-container');
-            newLevelContainers.forEach(function (levelContainer) {
-                Sortable.create(levelContainer, options);
-                attachEventListenersToCards(levelContainer); // Attach event listeners to the newly loaded cards
-            });
+            // Reinitialize Sortable for all level containers
+            Sortable.create(level_container_1, options);
+            Sortable.create(level_container_2, options);
+            Sortable.create(level_container_3, options);
+            Sortable.create(level_container_4, options);
 
-            setupEventListeners(); // Reattach event listeners to all buttons
-
+            // Reattach event listeners to all buttons
+            setupEventListeners();
         };
 
         reader.readAsText(file);
