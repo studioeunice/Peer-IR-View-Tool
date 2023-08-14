@@ -6,9 +6,11 @@ The app enables users to visually map organizational structures by capturing key
 
 ![plot](./media/help-1.png)
 
+
 2. Copying, editing and deleting the cards. Adding empty cards. Editing Management container name.
 
 ![plot](./media/help-2.png)
+
 
 3. Opening the help window. Saving and loading the process (files can be sent and used by other users). Printing the website.
 
